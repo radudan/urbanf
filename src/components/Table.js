@@ -7,8 +7,7 @@ import Input from "./Input";
 import Button from "./Button";
 import {waitSec} from "./Utils";
 import urbImg from "./urban.jpg"
-import urbanLogo from "./urbanLogo.jpg"
-import {Logo, Title} from "./CommonComponents";
+import {Logo, performFetch, Title} from "./CommonComponents";
 
 function Table() {
     const data = useCells()
@@ -21,7 +20,6 @@ function Table() {
     useEffect(() => {
         async function getWeek() {
             let r =  await (performFetch(week));
-            console.log(r)
             setWeekly(r)
         }
         getWeek();
@@ -182,21 +180,12 @@ function SubmitForms({cell, setUpdate, update}) {
                         disabled={(FirstName !== ''& SurName !== '')?false:true}
                     />
                     <p className='message'>{message}</p>
-
-
             </>
         )}
     else return(<><p className='group-closed'>GRUPO CERADO</p>
     <p className='cancel-reason'>Completo</p></>)
 }
 
-
-const performFetch = async (query) =>{
-    const data = await fetch("http://urbanfit.tocloud.in:3001/" + query);
-    let resp = await data.json()
-    //console.log(resp)
-    return resp;
-}
 
 let cellKeys = [
     {

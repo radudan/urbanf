@@ -6,7 +6,7 @@ export function Logo(){
     return (
         <>
             <div className='data-cell'>
-                <img  className='add-bottom' src={urbanLogo}/>
+                <img  className='logo-image' src={urbanLogo}/>
             </div>
         </>
     )
@@ -43,3 +43,9 @@ export function Title({update, setUpdate, week, setWeek}) {
     )
 }
 
+export  async function performFetch(query){
+    const data = await fetch("http://urbanfit.tocloud.in:3001/" + query);
+    let resp = await data.json()
+    //console.log(resp)
+    return resp;
+}

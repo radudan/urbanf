@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import Input from "./Input";
 import Button from "./Button";
 import {waitSec} from "./Utils";
-import {Logo, Title} from "./CommonComponents";
+import {Logo, performFetch, Title} from "./CommonComponents";
 
 function AdminPage() {
     const data = useCells()
@@ -259,16 +259,6 @@ function CancelUsr({user, update, setUpdate}) {
             <Button variant='danger' className='cancel-btn' label={'eliminar'} onClick={cancelUser}/>
         </div>
     )
-}
-
-
-
-
-const performFetch = async (query) =>{
-    const data = await fetch("http://localhost:3001/" + query);
-    let resp = await data.json()
-    //console.log(resp)
-    return resp;
 }
 
 
