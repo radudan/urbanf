@@ -192,7 +192,7 @@ function SubmitForms({cell, setUpdate, update}) {
 
 
 const performFetch = async (query) =>{
-    const data = await fetch("http://127.0.0.1:3001/" + query);
+    const data = await fetch("http://urbanfit.tocloud.in:3001/" + query);
     let resp = await data.json()
     //console.log(resp)
     return resp;
