@@ -36,3 +36,152 @@
     transform: rotate(360deg);
   }
 }
+
+table, .header {
+  width: 90%;
+  margin: 0 auto;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h1{
+  margin: 20px;
+  color: #40a9ff;
+}
+
+.header.reverse {
+  flex-direction: row-reverse;
+}
+
+td, p {
+  padding: 0;
+  margin: 0;
+}
+
+td {
+  padding-bottom: 25px!important;
+  padding-top: 15px;
+  width: 150px;
+}
+
+.cell-date {
+  font-weight: bold;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  height: 55px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.data-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-cell > p:first-child {
+  color: red;
+  padding-bottom: 25px;
+  font-weight: bold;
+}
+.describe-data {
+  padding-top: 5px;
+  padding-bottom: 3px;
+  color:red;
+  font-weight: bold;
+}
+.default-values {
+  display: flex;
+  padding: 50px;
+  width: 300px;
+  text-align: center;
+}
+
+.cancel-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.add-bottom {
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+.cancel-btn {
+  height: 20px;
+  min-width: auto;
+}
+
+.cancel-all {
+  margin: 0 auto;
+  width: auto;
+}
+
+.cancel-input {
+  padding-top: 20px;
+  margin-top: 0px;
+}
+.week-button {
+  width: auto;
+}
+.cancel-reason {
+  color: deeppink;
+  font-size: 25px;
+}
+.canceled-workout{
+  font-weight: bold;
+  display: flex;
+  padding-top: 120px;
+  font-size: 20px;
+  color: red;
+  padding-bottom: 15px;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.cancel-input input {
+  width: 180px;
+  padding: 5px 0;
+  text-transform: capitalize;
+}
+
+.paragraph-link {
+  color: green !important;
+  cursor: pointer;
+  padding-top: 20px;
+  padding-bottom: 15px !important;
+}
+.image-link {
+  cursor: pointer;
+height: 800px;
+}
+.message {
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+.group-closed{
+  font-weight: bold;
+  display: flex;
+  padding-top: 55px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  color: red;
+}
+
+.admin-button{
+  width: auto;
+}

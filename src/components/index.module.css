@@ -1,0 +1,236 @@
+
+.button {
+    position: relative;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    padding: 8px 12px;
+    cursor: pointer;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 90px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid;
+    color: #fff;
+    -webkit-transition: background 0.2s ease;
+    -moz-transition: background 0.2s ease;
+    -o-transition: background 0.2s ease;
+    transition: background 0.2s ease;
+}
+
+.medium {
+    font-size: 16px;
+}
+
+.large {
+    font-size: 18px;
+    background-color: #0a0a0a;
+    border-color: #de0744;
+    color: #e3063a;
+    position: center;
+}
+
+.outline {
+    background-color: #fff;
+    border-color: #3777d1;
+    color: #3777d1;
+}
+
+.outline:hover {
+    background-color: #3777d1;
+    border-color: #3777d1;
+    color: #fff;
+}
+
+.basic {
+    background-color: #3777d1;
+    border-color: #3777d1;
+    color: #fff;
+}
+
+.basic:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: #3777d1;
+}
+
+.link {
+    background-color: transparent;
+    color: #4c4c4c;
+    box-shadow: none;
+}
+
+.link:hover {
+    color: #40a9ff;
+    background-color: transparent;
+}
+
+.secondary {
+    background-color: #fff;
+    border-color: rgb(186, 186, 186);
+    color: #4c4c4c;
+}
+
+.secondary:hover {
+    background-color: #eee;
+    border-color: #eee;
+}
+
+.primary {
+    background-color: #2fcb53;
+    border-color: #2fcb53;
+    color: #ea0a0a;
+    font-size: 15px;
+}
+
+.primary:hover {
+    background-color: #48dd84;
+    border-color: #48dd84;
+}
+
+.danger {
+    color: #fff;
+    background-color: rgb(214, 69, 64);
+    border-color: rgb(214, 69, 64);
+}
+
+.danger:hover {
+    background-color: rgb(208, 50, 45);
+    border-color: rgb(208, 50, 45);
+}
+
+.disabled {
+    background-color: #fff;
+    border-color: #bababa;
+    color: #bababa;
+    box-shadow: none;
+    opacity: 0.7;
+    cursor: not-allowed;
+    border: 1px solid;
+}
+
+.disabled:hover {
+    background-color: #fff;
+    color: #bababa;
+    border-color: #bababa;
+}
+
+
+  .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+.label {
+    display: block;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 4px;
+    letter-spacing: -0.05px;
+    color: greenyellow;
+}
+
+.input,
+.textarea {
+    padding: 8px 10px;
+    width: 60px;
+    color: #4c4c56;
+    resize: none;
+    font-size: 14px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    transition: 200ms ease all;
+    border: 1px solid #607d8b;
+    text-align: center;
+}
+
+.input:focus,
+.textarea:focus {
+    box-shadow: rgba(67, 90, 111, 0.14) 0px 0px 2px inset,
+    rgb(87, 154, 217) 0px 0px 0px 1px inset,
+    rgba(16, 112, 202, 0.14) 0px 0px 0px 3px;
+    outline: none;
+}
+
+.hasError {
+    border-color: #eb5055;
+}
+
+.hasError:focus {
+    border-color: #eb5055;
+}
+
+.readonly {
+    box-shadow: rgba(67, 90, 111, 0.14) 0px 0px 0px 1px inset;
+    background-color: rgb(245, 246, 247);
+}
+
+.readonly:focus {
+    box-shadow: none;
+    cursor: no-drop;
+}
+
+.textarea {
+    line-height: 1.5em;
+    height: 100px;
+    padding: 10px;
+}
+
+.helperText {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: capitalize;
+    letter-spacing: 0.3px;
+    display: block;
+    position: relative;
+    bottom: 5px;
+    color: #7cb342;
+}
+
+.error {
+    color: #eb5055;
+}
+
+.table {
+    border-spacing: 0;
+    border: 2px solid #0676ec;
+    alignment: center;
+}
+
+.tr:last-child td {
+    border: 2px solid #0676ec;
+}
+
+th,
+td {
+    margin: 0;
+    padding: 0.5rem;
+    border: 2px solid #0676ec;
+    color: #2fcb53;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    height: 55px;
+    justify-content: space-evenly;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.eu {
+    alignment: right;
+    align-content: center;
+    background-color: #2fcb53;
+}
