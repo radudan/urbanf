@@ -129,8 +129,9 @@ td {
 }
 
 .cancel-input {
-  padding-top: 20px;
+  padding-top: 15px;
   margin-top: 0px;
+  padding-bottom: 0px;
 }
 .week-button {
   width: auto;

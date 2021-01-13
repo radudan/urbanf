@@ -172,13 +172,12 @@ function SubmitForms({cell, setUpdate, update}) {
                     value={SurName}
                     onChange={({value})=>setSurName(value)}
                 />
-
-                    <Button
-                        // className='button-container'
-                        label="Participar"
-                        onClick={handleSubmit}
-                        disabled={(FirstName !== ''& SurName !== '')?false:true}
-                    />
+                <Button
+                    // className='button-container'
+                    label="Participar"
+                    onClick={handleSubmit}
+                    disabled={(FirstName !== ''& SurName !== '')?false:true}
+                />
                     <p className='message'>{message}</p>
             </>
         )}
