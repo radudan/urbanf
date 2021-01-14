@@ -46,7 +46,7 @@ export function Title({update, setUpdate, week, setWeek}) {
 }
 
 export  async function performFetch(query){
-    const data = await fetch(`http://${server}:3001/` + query);
+    const data = await fetch(`https://${server}:3002/` + query);
     let resp = await data.json()
     //console.log(resp)
     return resp;
