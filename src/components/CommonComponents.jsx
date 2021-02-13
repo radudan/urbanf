@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import urbanLogo from "./urbanLogo.jpg";
 import Button from "./Button";
 let server = 'urbanfit.tocloud.in';
-// let server = 'localhost';
+//let server = 'localhost';
 
 export function Logo(){
     return (

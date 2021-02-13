@@ -15,7 +15,7 @@ function AdminPage() {
     const [weekly, setWeekly] = useState([]);
     const [update, setUpdate] = useState(false);
     const [week, setWeek] = useState('currentweek');
-    const [defaults, setDefaults] = useState({morning:"0", evening:"1", maxusers:"18"});
+    const [defaults, setDefaults] = useState({morning:"0", siesta:"2", evening:"1", maxusers:"18"});
     const [dates, setDates] = useState([]);
 
     useEffect(() => {
@@ -43,7 +43,7 @@ function AdminPage() {
 
 function extrData(weekly, keyVal, dates) {
     let date = dates[keyVal.substring(0, keyVal.length-2)];
-    let h = keyVal.endsWith("eh")?19:10;
+    let h = keyVal.endsWith("eh")?19:keyVal.endsWith("sh")?15:10;
     let resp = {a:"-",h:h, date:date, day:keyVal.substring(0, keyVal.length-2),c:'no'}
     if(weekly[keyVal] !== undefined)
         resp =  weekly[keyVal]
@@ -51,21 +51,23 @@ function extrData(weekly, keyVal, dates) {
 }
 
 function DefaultValues({update, setUpdate, defaults, setDefaults}) {
-    const [morning, setMorning] = useState(defaults.morning)
+    const [morning, setMorning] = useState(defaults.morning);
+    const [siesta, setSiesta] = useState(defaults.siesta);
     const [evening, setEvening] = useState(defaults.evening)
     const [maxusers, setMaxusers] = useState(defaults.maxusers)
     const [message, setMessage] = useState('');
 
     useEffect(() => {
         setMorning(defaults.morning)
+        setSiesta(defaults.siesta);
         setEvening(defaults.evening)
         setMaxusers(defaults.maxusers)
     }, [update, defaults])
 
     const changeDef = async () =>{
-        let request = `changedefaults?morning=${morning}&evening=${evening}&maxusers=${maxusers}`
+        let request = `changedefaults?morning=${morning}&siesta=${siesta}&evening=${evening}&maxusers=${maxusers}`
         let resp = await performFetch(request);
-        setMessage(resp.message)
+        setMessage(resp.message);
         await waitSec(2);
         setMessage('')
         setUpdate(!update)
@@ -85,6 +87,12 @@ function DefaultValues({update, setUpdate, defaults, setDefaults}) {
                                 value={morning}
                                 onChange={({value})=>setMorning(value)}
                             />
+                                <Input
+                                    label={'Siesta'}
+                                    name={'siesta'}
+                                    value={siesta}
+                                    onChange={({value})=>setSiesta(value)}
+                                />
                             <Input
                                 label={'Tarde'}
                                 name={'evening'}
@@ -178,7 +186,7 @@ function TableCell({cell, weekly, setUpdate, update, defaults, dates}) {
 }
 
 function CreateWorkout({cell, defaults, update, setUpdate}) {
-    let hour = (cell.h > 12)?defaults.evening:defaults.morning
+    let hour = (cell.h < 12)?defaults.morning:(cell.h > 18)?defaults.evening:defaults.siesta;
     const [details, setDetails] = useState([]);
     const [message, setMessage] = useState('');
     useEffect(()=>{setDetails({hour:hour, maxusers: defaults.maxusers})},[defaults]);
@@ -221,7 +229,7 @@ function CurrentWorkouts({cell, setUpdate, update}) {
     }
     useEffect(() => {
         const getJoiningUsers = async () => {
-            let reqParams = `joining?date=${cell.d}&hour=${cell.h}`
+            let reqParams = `joining?date=${cell.d}&hour=${cell.h}`;
             const results = await performFetch(reqParams);
             setUsers([results]);
         }
@@ -269,6 +277,12 @@ let cellKeys = [
         Wednesday: 'Wednesdaymh',
         Thursday: 'Thursdaymh',
         Friday: 'Fridaymh'},
+    {
+        Monday: 'Mondaysh',
+        Tuesday: 'Tuesdaysh',
+        Wednesday: 'Wednesdaysh',
+        Thursday: 'Thursdaysh',
+        Friday: 'Fridaysh'},
     {
         Monday: 'Mondayeh',
         Tuesday: 'Tuesdayeh',

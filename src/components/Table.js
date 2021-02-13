@@ -194,6 +194,12 @@ let cellKeys = [
         Thursday: 'Thursdaymh',
         Friday: 'Fridaymh'},
     {
+        Monday: 'Mondaysh',
+        Tuesday: 'Tuesdaysh',
+        Wednesday: 'Wednesdaysh',
+        Thursday: 'Thursdaysh',
+        Friday: 'Fridaysh'},
+    {
         Monday: 'Mondayeh',
         Tuesday: 'Tuesdayeh',
         Wednesday: 'Wednesdayeh',
