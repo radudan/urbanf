@@ -49,6 +49,13 @@ table, .header {
   align-items: center;
 }
 
+.header_days {
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+  color: greenyellow;
+}
+
 .header h1{
   margin: 20px;
   color: #40a9ff;

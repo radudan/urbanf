@@ -16,11 +16,14 @@ function Table() {
     const [weekly, setWeekly] = useState([]);
     const [update, setUpdate] = useState(false)
     const [week, setWeek] = useState('currentweek');
+    const [dates, setDates] = useState([]);
 
     useEffect(() => {
         async function getWeek() {
             let r =  await (performFetch(week));
-            setWeekly(r)
+            setWeekly(r);
+            let datesday = await performFetch(week +'days');
+            setDates(datesday)
         }
         getWeek();
     }, [update, week])
@@ -28,7 +31,7 @@ function Table() {
     return(
         <React.Fragment>
             <Logo />
-            <Title update={update} setUpdate={setUpdate} week={week} setWeek={setWeek}/>
+            <Title update={update} setUpdate={setUpdate} week={week} setWeek={setWeek} dates={dates}/>
             <TableRend columns={columns} data={data} weekly = {weekly} setUpdate={setUpdate} update={update}/>
             <Location/>
         </React.Fragment>

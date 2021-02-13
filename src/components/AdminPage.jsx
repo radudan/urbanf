@@ -33,7 +33,7 @@ function AdminPage() {
     return(
         <React.Fragment>
             <Logo />
-            <Title update={update} setUpdate={setUpdate} week={week} setWeek={setWeek}/>
+            <Title update={update} setUpdate={setUpdate} week={week} setWeek={setWeek} dates={dates}/>
             <TableRend columns={columns} data={data} weekly = {weekly} setUpdate={setUpdate} update={update} defaults={defaults} dates={dates}/>
             <DefaultValues update={update} setUpdate={setUpdate} defaults={defaults} setDefaults={setDefaults}/>
         </React.Fragment>

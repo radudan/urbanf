@@ -15,7 +15,7 @@ export function Logo(){
 }
 
 
-export function Title({update, setUpdate, week, setWeek}) {
+export function Title({update, setUpdate, week, setWeek, dates}) {
     const {next, previous, thisWeek, nextWeek} = {
         next:'PROXIMA SEMANA  >>>', previous:'<<<  SEMANA ACTUAL',
         thisWeek:'SEMANA ACTUAL', nextWeek:'PROXIMA SEMANA'}
@@ -41,6 +41,10 @@ export function Title({update, setUpdate, week, setWeek}) {
                 <h1>{title}</h1>
                 <Button className='week-button' onClick={changeWeek}>{displayedWeek}</Button>
             </div>
+            <div className='header_days'>
+                <h2>{(`${dates.Monday} - ${dates.Friday}`)}</h2>
+            </div>
+
         </>
     )
 }
