@@ -276,19 +276,29 @@ let cellKeys = [
         Tuesday: 'Tuesdaymh',
         Wednesday: 'Wednesdaymh',
         Thursday: 'Thursdaymh',
-        Friday: 'Fridaymh'},
+        Friday: 'Fridaymh',
+        Saturday:'Saturdaymh',
+        Sunday:'Sundaymh'
+    },
     {
         Monday: 'Mondaysh',
         Tuesday: 'Tuesdaysh',
         Wednesday: 'Wednesdaysh',
         Thursday: 'Thursdaysh',
-        Friday: 'Fridaysh'},
+        Friday: 'Fridaysh',
+        Saturday:'Saturdaysh',
+        Sunday:'Sundaysh'
+    },
+
     {
         Monday: 'Mondayeh',
         Tuesday: 'Tuesdayeh',
         Wednesday: 'Wednesdayeh',
         Thursday: 'Thursdayeh',
-        Friday: 'Fridayeh'}
+        Friday: 'Fridayeh',
+        Saturday:'Saturdayeh',
+        Sunday:'Sundayeh'
+    }
 ]
 
 function useCells() {
@@ -323,6 +333,14 @@ let colValues =  [{
     {
         Header: "Viernes",
         accessor: "Friday"
+    },
+    {
+        Header: "Sabado",
+        accessor: "Saturday"
+    },
+    {
+        Header: "Domingo",
+        accessor: "Sunday"
     }
 ]
 

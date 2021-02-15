@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import urbanLogo from "./urbanLogo.jpg";
 import Button from "./Button";
-let server = 'urbanfit.tocloud.in';
-//let server = 'localhost';
+//let server = 'urbanfit.tocloud.in';
+let server = 'localhost';
 
 export function Logo(){
     return (
@@ -45,12 +45,13 @@ export function Title({update, setUpdate, week, setWeek, dates}) {
                 <h2>{(`${dates.Monday} - ${dates.Friday}`)}</h2>
             </div>
 
+
         </>
     )
 }
 
 export  async function performFetch(query){
-    const data = await fetch(`https://${server}:3002/` + query);
+    const data = await fetch(`http://${server}:3001/` + query);
     let resp = await data.json()
     //console.log(resp)
     return resp;
