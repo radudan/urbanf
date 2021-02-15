@@ -42,7 +42,7 @@ export function Title({update, setUpdate, week, setWeek, dates}) {
                 <Button className='week-button' onClick={changeWeek}>{displayedWeek}</Button>
             </div>
             <div className='header_days'>
-                <h2>{(`${dates.Monday} - ${dates.Friday}`)}</h2>
+                <h2>{(`${dates.Monday} - ${dates.Sunday}`)}</h2>
             </div>
 
 
